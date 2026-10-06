@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: komunikator-postgres
+    environment:
+      POSTGRES_USER: komunikator
+      POSTGRES_PASSWORD: komunikator123
+      POSTGRES_DB: komunikator
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
